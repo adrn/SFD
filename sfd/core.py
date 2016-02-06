@@ -107,7 +107,7 @@ def reddening(coordinate, survey, filters, order=1):
     with open(ebv_conv_file,'r') as f:
         ebv_to_red = json.loads(f.read())[survey]
 
-    EBV = sfd_ebv(coordinate, order=order)
+    EBV = ebv(coordinate, order=order)
 
     out = np.zeros((len(coordinate), len(filters)))
     for i,filter_name in enumerate(filters):
