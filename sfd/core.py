@@ -16,11 +16,11 @@ from astropy.utils.data import get_pkg_data_filename
 import numpy as np
 from scipy.ndimage import map_coordinates
 
-__all__ = ['sfd_ebv', 'sfd_reddening']
+__all__ = ['ebv', 'reddening']
 
-def sfd_ebv(coordinate, order=1):
+def ebv(coordinate, order=1):
     """
-    Return SFD extinction at the input coordinate(s).
+    Return SFD E(B-V) at the input coordinate(s).
 
     Parameters
     ----------
@@ -76,7 +76,7 @@ def sfd_ebv(coordinate, order=1):
 
     return EBV
 
-def sfd_reddening(coordinate, survey, filters, order=1):
+def reddening(coordinate, survey, filters, order=1):
     """
     Return SFD reddening in the given filters
 
