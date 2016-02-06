@@ -19,3 +19,19 @@ or
     pip install -r pip-requirements.txt
 
 from the top-level of the cloned repository
+
+## Usage
+
+    import astropy.units as u
+    import astropy.coordinates as coord
+    from sfd import sfd_ebv, sfd_reddening
+
+    c = coord.SkyCoord(ra=[154.12, 11.1]*u.degree,
+                       dec=[-21.63,31.65]*u.degree)
+
+    EBV = sfd_ebv(c)
+
+    # or
+
+    reddening = sfd_reddening(c, survey='PS1', filters='gri')
+
