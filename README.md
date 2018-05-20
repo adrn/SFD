@@ -35,3 +35,8 @@ from the top-level of the cloned repository
 
     reddening = reddening(c, survey='PS1', filters='gri')
 
+## Coefficients
+
+Pan-STARRS from Schlafly et al. 2011
+
+Others from https://arxiv.org/abs/1301.1427
