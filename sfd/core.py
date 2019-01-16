@@ -76,7 +76,7 @@ def ebv(coordinate, order=1):
 
     return EBV
 
-def reddening(coordinate, survey, filters, order=1):
+def reddening(coordinate, survey, filters, ebv=None, order=1):
     """
     Return SFD reddening in the given filters
 
@@ -107,7 +107,10 @@ def reddening(coordinate, survey, filters, order=1):
     with open(ebv_conv_file,'r') as f:
         ebv_to_red = json.loads(f.read())[survey]
 
-    EBV = ebv(coordinate, order=order)
+    if ebv is None:
+        EBV = ebv(coordinate, order=order)
+    else:
+        EBV = ebv
 
     out = np.zeros((len(coordinate), len(filters)))
     for i,filter_name in enumerate(filters):
